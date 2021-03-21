@@ -2,7 +2,7 @@
 
 # Implementation
 ### step 1 - include JS/CSS File:
-JQuery is required!
+JQuery and JQuery UI is required!
 ```
 <script src="{your URL}/gallery.js"></script>
 <link rel="stylesheet" type="text/css" href="{your URL}/gallery.css" media="screen" />
