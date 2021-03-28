@@ -1,13 +1,17 @@
 # JavaScriptGallery
 
 # Implementation
-### step 1 - include JS/CSS File:
+### Step 1 - include JS/CSS File:
 JQuery and JQuery UI is required!
 ```
 <script src="{your URL}/gallery.js"></script>
 <link rel="stylesheet" type="text/css" href="{your URL}/gallery.css" media="screen" />
 ```
-### step 2 - include Gallery Script:
+### Step 2 - include HTML Tag:
+```
+<div class="Gallery"></div>
+```
+### Step 3 - include Gallery Script:
 ```javascript
 json = '{ "Entry": { "Title": "Gallery Demo", '+
 '"Image": ["{your URL}/f.jpg",'+
@@ -20,7 +24,7 @@ addGallery(json);
 json = '{ "Entry": { "Title": "Gallery 2", "Image": ["{your URL}/f.jpg", "{your URL}/g.jpg" ] } }';
 addGallery(json);
 ```
-### step 3 - include settings (optional):
+### Step 4 - include settings (optional):
 All settings parameters must be inserted before the addGallery() function
 
 
