@@ -2,8 +2,8 @@
     <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="gallery.js"></script>
-<link rel="stylesheet" type="text/css" href="gallery.css" media="screen" />
+<script src="gallery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="gallery.min.css" media="screen" />
 
     </head>
     <style>
@@ -26,7 +26,7 @@
     </style>
     <body>
         <h1>Gallery.js</h1>
-        <img class="codeImage galleryJS" width="600px" height="324px" src="http://192.168.178.20/marcel-bohland/img/a.png" alt="source code">
+        <img class="codeImage galleryJS" width="600px" height="324px" src="https://dummyimage.com/800x400/000/fff000" alt="source code">
 <div class="Gallery "></div>
 <div class="footer"><p>Marcel Bohland 2021</p></div>
 <script>  
@@ -39,12 +39,12 @@
     //backgroundColor("#000000f7");
     //setGalleryStyle("Circles");
     json = '{ "Entry": { "Title": "Meine Lieblings Bilder", '+
-       '"Image": ["https://dummyimage.com/600x400/000/fff",'+
-       '"https://dummyimage.com/600x400/000/000",'+
-       '"https://dummyimage.com/600x400/000/fff",'+
-       '"https://dummyimage.com/600x400/000/000",'+
-       '"https://dummyimage.com/600x400/000/fff",'+
-       '"https://dummyimage.com/600x400/000/000" ] } }';
+       '"Image": ["https://dummyimage.com/800x400/000/ff0000",'+
+       '"https://dummyimage.com/800x400/000/000",'+
+       '"https://dummyimage.com/800x400/000/00ff00",'+
+       '"https://dummyimage.com/800x400/000/000",'+
+       '"https://dummyimage.com/800x400/000/0000ff",'+
+       '"https://dummyimage.com/800x400/000/000" ] } }';
    addGallery(json);
    json = '{ "Entry": { "Title": "Was ist los mit dir?",  "Image": ["https://via.placeholder.com/300", "https://via.placeholder.com/1200" ] } }';
    addGallery(json);

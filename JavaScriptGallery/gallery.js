@@ -2,7 +2,7 @@
 *
 * A Gallery and Imageviewer library
 * Author: Marcel Bohland Copyright 2021
-* Version: 0.1
+* Version: 0.1.1
 * url: https://github.com/marcelbohland
 * License: Apache License 2.0:
 *
@@ -70,10 +70,9 @@ function backgroundColor(color){
     backgroundcolor = color;
 }
 
-function addGallery(Data){
+ function addGallery(Data){
 
     // Adds images and a headline to the Gallery
-
 
     var obj = jQuery.parseJSON(Data);
   $.each(obj, function(i, item) {
@@ -95,18 +94,79 @@ function addGallery(Data){
      }
 
      for(i=0;i<length;i++){
-        $('.Gallery').append('<img loading="lazy" class="'+className+'" alt="Image'+ImageIndex+'" width="300px" height="169px" class="fadein" id="'+ImageIndex+'" onClick="openViewer(this.id)" src="'+obj.Entry.Image[i]+'"/>');
-        ImageIndex++;
+
+      // Check if preview Image exsits
+         x = AjaxCall(obj,i);
+          if(x==1){
+            $('.Gallery').append('<img loading="lazy" class="'+className+'" alt="Image'+ImageIndex+'" width="300px" height="169px" class="fadein" id="'+ImageIndex+'" onClick="openViewer(this.id)" src="'+obj.Entry.Image[i]+'"/>');   
+            ImageIndex++;
+          }else{
+            if(obj.Entry.Image[i].includes(".jpeg")){
+              split  = obj.Entry.Image[i].split(".jpeg");
+            newURL = split[0]+'-preview.jpeg#preview';
+            }else  if(obj.Entry.Image[i].includes(".jpg")){
+              split  = obj.Entry.Image[i].split(".jpg");
+              newURL = split[0]+'-preview.jpg#preview';
+              }else  if(obj.Entry.Image[i].includes(".png")){
+                split  = obj.Entry.Image[i].split(".png");
+                newURL = split[0]+'-preview.png#preview';
+                }else  if(obj.Entry.Image[i].includes(".webp")){
+                  split  = obj.Entry.Image[i].split(".webp");
+                  newURL = split[0]+'-preview.webp#preview';
+                  }
+            $('.Gallery').append('<img loading="lazy" class="'+className+'" alt="Image'+ImageIndex+'" width="300px" height="169px" class="fadein" id="'+ImageIndex+'" onClick="openViewer(this.id)" src="'+newURL+'"/>');   
+            ImageIndex++;
+          }
      }
 });
 addPlayer();
 }
+
+//Check if preview Image Exsists
+ function AjaxCall(obj,i){
+  if(obj.Entry.Image[i].includes(".jpeg#preview")){
+      return 2; 
+
+  }else if(obj.Entry.Image[i].includes(".jpg#preview")){
+        return 2; 
+
+  }else if(obj.Entry.Image[i].includes(".png#preview")){
+        return 2; 
+ 
+  }else if(obj.Entry.Image[i].includes(".webp#preview")){
+     
+        return 2; 
+  }else{
+    return 1;
+  }
+}
+
+//Check if a Image is only a Preview
+function checkPreviewState(url){
+  newURL=url;
+  if(url.includes("-preview.jpeg#preview")){
+    split  = url.split("-preview.jpeg#preview");
+    newURL = split[0]+".jpeg";
+   }else   if(url.includes("-preview.jpg#preview")){
+    split  = url.split("-preview.jpg#preview");
+    newURL = split[0]+".jpg";
+   }else   if(url.includes("-preview.png#preview")){
+    split  = url.split("-preview.png#preview");
+    newURL = split[0]+".png";
+   }else   if(url.includes("-preview.webp#preview")){
+    split  = url.split("-preview.webp#preview");
+    newURL = split[0]+".webp";
+   }
+   return newURL;
+}
+
+
 function addImageViewer(){
     // Adds player HTML code to GalleryViewer Div container
 
     if(added==0){
         $('body').append('<div style="background-color:'+backgroundcolor+';" class="GalleryViewer"></div>');
-        $('.GalleryViewer').append('<img class="ViewerImage" id="ViewerImage" src="http://192.168.178.20/marcel-bohland-old/img/Photos/f.jpg" />');
+        $('.GalleryViewer').append('<img class="ViewerImage" id="ViewerImage" src="" />');
         $('.GalleryViewer').append('<svg onClick="left()" class="ArrowLeft" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>');
         $('.GalleryViewer').append('<svg onClick="right()" class="Arrowright"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>');
        // $('.GalleryViewer').append('<img onClick="closeViewer()" class="GalleryViewerClose" src="https://static.thenounproject.com/png/2341854-200.png" />');
@@ -133,7 +193,7 @@ function addPlayer(){
 
     if(added==0){
     $('body').append('<div class="GalleryViewer"></div>');
-    $('.GalleryViewer').append('<img class="ViewerImage" id="ViewerImage" src="http://192.168.178.20/marcel-bohland-old/img/Photos/f.jpg" />');
+    $('.GalleryViewer').append('<img class="ViewerImage" id="ViewerImage" src="" />');
     $('.GalleryViewer').append('<svg onClick="left()" class="ArrowLeft" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>');
     $('.GalleryViewer').append('<svg onClick="right()" class="Arrowright"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>');
    // $('.GalleryViewer').append('<img onClick="closeViewer()" class="GalleryViewerClose" src="https://static.thenounproject.com/png/2341854-200.png" />');
@@ -169,9 +229,25 @@ function closeViewer(){
     monoImageView = 0;
     monoImageViewURL="";
 }
+
+function checkPreviewState(url){
+  newURL=url;
+  if(url.includes("-preview.jpeg#preview")){
+    split  = url.split("-preview.jpeg#preview");
+    newURL = split[0]+".jpeg";
+   }else   if(url.includes("-preview.jpg#preview")){
+    split  = url.split("-preview.jpg#preview");
+    newURL = split[0]+".jpg";
+   }
+   return newURL;
+}
+
 function openViewer(clicked_id){
     viewerPosition=parseInt(clicked_id);
     var url = document.getElementById(clicked_id).src;
+
+    url = checkPreviewState(url);
+
     $(".ViewerImage").attr("src",url);
     const img = new Image();
     img.onload = function() {
@@ -198,6 +274,9 @@ function left(){
     viewerPosition=viewerPosition-1;
     if(viewerPosition>=0){
     var url = document.getElementById(viewerPosition).src;
+
+    url = checkPreviewState(url);
+
     $(".ViewerImage").attr("src",url);
 
     const img = new Image();
@@ -282,6 +361,9 @@ function right(){
     viewerPosition=viewerPosition+1;
     if(viewerPosition<ImageIndex){
     var url = document.getElementById(viewerPosition).src;
+
+    url = checkPreviewState(url);
+
     $(".ViewerImage").attr("src",url);
 
     const img = new Image();
