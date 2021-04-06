@@ -1,5 +1,8 @@
 # JavaScriptGallery
 
+[![current version](https://img.shields.io/badge/current%20version-0.1.1-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.1)
+[![last version](https://img.shields.io/badge/last%20version-0.1.0-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.0)
+
 # Implementation
 ### Step 1 - include JS/CSS File:
 JQuery and JQuery UI is required!
