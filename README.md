@@ -63,7 +63,7 @@ setGalleryStyle("full");
 Add "galleryJS" to img tags!
 For a full Viewer add "addToGallery" too
 
-# Add preview Images (since v.0.1.1):
+# Add preview Images:
 1. Add #preview to the end of the Image url.
 2. Add a smaller preview Image to the same path ({original_name}-preview.{original_file_extension})
 
