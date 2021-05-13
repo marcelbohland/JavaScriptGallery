@@ -1,5 +1,8 @@
 # JavaScriptGallery
 
+[![current version](https://img.shields.io/badge/current%20version-0.1.1-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.1)
+[![last version](https://img.shields.io/badge/last%20version-0.1.0-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.0)
+
 # Implementation
 ### Step 1 - include JS/CSS File:
 JQuery and JQuery UI is required!
@@ -59,6 +62,12 @@ setGalleryStyle("full");
 # Image viewer
 Add "galleryJS" to img tags!
 For a full Viewer add "addToGallery" too
+
+# Add preview Images
+1. Add #preview to the end of the Image url.
+2. Add a smaller preview Image to the same path ({original_name}-preview.{original_file_extension})
+
+.jpeg; .png; .jpg and .webp are supported
 
 # License
 Copyright 2021 Marcel Bohland - https://github.com/marcelbohland/JavaScriptGallery/
