@@ -36,8 +36,44 @@ monoImageViewURL="";
 eachID=0;
 backgroundcolor = "#000000e8";
 galleryStyle = "normal";
+AutoWidth = 0;
+//Masaic
+topVar = 0;
+leftVar = 0;
+array = [30];
 
 $(document).ready(function(){
+
+  for(i=0;i<=30;i++){
+    array[i] = 0;
+}
+  if(className=="mosaic"){
+  windowWidth =  $( "body" ).width();
+  counter = 0;
+      $('.mosaic').each(function( index ) {
+          if(array[counter] == 0){
+              elementHeight = $(this).height();
+              array[counter] = elementHeight;
+              $(this).css("transform","translate("+leftVar+"px, "+topVar+"px)");  
+          }else{
+              elementHeight = $(this).height();
+              height = 200 - array[counter];
+              newTop = topVar - height;
+              $(this).css("transform","translate("+leftVar+"px, "+newTop+"px)");
+              array[counter] = elementHeight - height;
+          }
+          leftVar = leftVar+300;
+          console.log(windowWidth);
+          if(leftVar+300 >= windowWidth-200){
+              leftVar = 0;
+              topVar = topVar+240;
+              counter = 0;
+          }else{
+              counter++;
+          }
+          });
+
+        }          
 
     $(".ViewerImage").dblclick(function(){
         zoom();
@@ -70,28 +106,116 @@ function backgroundColor(color){
     backgroundcolor = color;
 }
 
+function enableAutoWidth(){
+  AutoWidth = 1;
+}
+
+$(window).on('resize', function(){
+  if(AutoWidth == 1){
+    galleryWidth = $(".Gallery").width();
+
+  
+    if(galleryWidth>1920){
+      galleryWidth4 = 300;
+    }
+    if(galleryWidth<1920){
+      galleryWidth4 = galleryWidth/5-20;
+    }
+    if(galleryWidth<1400){
+      galleryWidth4 = galleryWidth/4-20;
+    }
+    if(galleryWidth<1024){
+      galleryWidth4 = galleryWidth/3-20;
+    }
+    if(galleryWidth<786){
+      galleryWidth4 = galleryWidth/2-20;
+    }if(galleryWidth<450){
+      galleryWidth4 = galleryWidth/1-20;
+    }
+
+    $(".Gallery img").width(galleryWidth4);
+  }
+});
+
+$(document).ready(function() { 
+
+  if(AutoWidth == 1){
+    galleryWidth = $(".Gallery").width();
+
+    if(galleryWidth>1920){
+      galleryWidth4 = 300;
+    }
+    if(galleryWidth<1920){
+      galleryWidth4 = galleryWidth/5-20;
+    }
+    if(galleryWidth<1400){
+      galleryWidth4 = galleryWidth/4-20;
+    }
+    if(galleryWidth<1024){
+      galleryWidth4 = galleryWidth/3-20;
+    }
+    if(galleryWidth<786){
+      galleryWidth4 = galleryWidth/2-20;
+    }if(galleryWidth<450){
+      galleryWidth4 = galleryWidth/1-20;
+    }
+
+    $(".Gallery img").width(galleryWidth4);
+  }
+
+  if(className=="mosaic"){
+    valeCounter = 0;
+
+    for(i=0;i<ImageIndex;i++){
+      valeCounter++;
+    
+    if(valeCounter<=3){
+      $("#"+i).addClass("small");
+    }
+    if(valeCounter>3&&valeCounter<=6){
+      $("#"+i).addClass("medium");
+    }
+    if(valeCounter>6&&valeCounter<=9){
+      $("#"+i).addClass("large");
+      valeCounter=0;
+    }
+    }
+    
+      $('.Gallery').show();
+  }
+});
+
  function addGallery(Data){
 
     // Adds images and a headline to the Gallery
 
     var obj = jQuery.parseJSON(Data);
   $.each(obj, function(i, item) {
-     $('.Gallery').append('<p>'+obj.Entry.Title+'</p>');
+
+    className="";
+    if(galleryStyle=="tiles"){
+       className="tiles";
+    }
+    if(galleryStyle=="full"){
+       className="full";
+    }  
+    if(galleryStyle=="center"){
+       className="center";
+    }
+    if(galleryStyle=="Circles"){
+       className="Circles";
+    }
+    if(galleryStyle=="mosaic"){
+     className="mosaic";
+    }
+
+    if(className!="mosaic"){
+      $('.Gallery').append('<p>'+obj.Entry.Title+'</p>');
+    }else{
+      $('.Gallery').hide();
+    }
      length = Object.keys(obj.Entry.Image).length;
 
-     className="";
-     if(galleryStyle=="tiles"){
-        className="tiles";
-     }
-     if(galleryStyle=="full"){
-        className="full";
-     }  
-     if(galleryStyle=="center"){
-        className="center";
-     }
-     if(galleryStyle=="Circles"){
-        className="Circles";
-     }
 
      for(i=0;i<length;i++){
 
@@ -216,6 +340,7 @@ function addPlayer(){
     }
 }
 function closeViewer(){
+  $("body").css("overflow","unset");
     $('.GalleryViewer').hide();
     $('.Arrowright').show();
     $('.ArrowLeft').show();
@@ -243,6 +368,7 @@ function checkPreviewState(url){
 }
 
 function openViewer(clicked_id){
+    $("body").css("overflow","hidden");
     viewerPosition=parseInt(clicked_id);
     var url = document.getElementById(clicked_id).src;
 
@@ -262,7 +388,9 @@ function openViewer(clicked_id){
     }
     var url = $(".ViewerImage").attr('src');
     img.src = url;
-    $('.GalleryViewer').show();
+    img.onload = function() {
+      $('.GalleryViewer').show();
+    }
 }
 function left(){
   $(".ViewerImage").css({"width":"80%","max-height":"80%","top":"0","right":"0","left":"0"});
@@ -293,7 +421,8 @@ function left(){
     var url = $(".ViewerImage").attr('src');
     img.src = url;
 
-    if(transition=="opacity"){
+    img.onload = function() {
+      if(transition=="opacity"){
         $(".ViewerImage").css("opacity","0.4");
         $(".ViewerImage").animate({"opacity":"1"}, 200)
     }
@@ -346,9 +475,10 @@ function left(){
         $(".ViewerImage").animate({width: '80%'}, 300);
         $(".ViewerImage").animate({opacity: '1'}, 100);
     }
-    }else{
-        viewerPosition=viewerPosition+1;
     }
+  }else{
+    viewerPosition=viewerPosition+1;
+}
 }
 
 function right(){
@@ -379,8 +509,8 @@ function right(){
     }
     var url = $(".ViewerImage").attr('src');
     img.src = url;
-
-    if(transition=="opacity"){
+    img.onload = function() {
+      if(transition=="opacity"){
         $(".ViewerImage").css("opacity","0.4");
         $(".ViewerImage").animate({"opacity":"1"}, 200)
     }
@@ -433,6 +563,8 @@ function right(){
         $(".ViewerImage").animate({width: '80%'}, 300);
         $(".ViewerImage").animate({opacity: '1'}, 100);
     }
+    }
+
     }else{
         viewerPosition=viewerPosition-1; 
     }
