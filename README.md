@@ -34,16 +34,16 @@ All settings parameters must be inserted before the addGallery() function
 
 Transitions:
 
-opacity
-zoomin
-slide
-slideAndZoom
-slideZoom
-ZoominFast
-bounce
-puffzoom
+
 ```javascript
 setGalleryTransition("opacity");
+setGalleryTransition("zoomin");
+setGalleryTransition("slide");
+setGalleryTransition("slideAndZoom");
+setGalleryTransition("slideZoom");
+setGalleryTransition("ZoominFast");
+setGalleryTransition("bounce");
+setGalleryTransition("puffzoom");
 ```
 Enable optional buttons like share
 ```javascript
