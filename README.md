@@ -1,7 +1,8 @@
 # JavaScriptGallery
 
-[![current version](https://img.shields.io/badge/current%20version-0.1.1-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.1)
-[![last version](https://img.shields.io/badge/last%20version-0.1.0-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.0)
+[![current version](https://img.shields.io/badge/current%20version-0.1.2-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.2)
+[![last version](https://img.shields.io/badge/last%20version-0.1.1-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.1)
+[![license](https://img.shields.io/badge/license-Apache%20License%202.0-red.svg)](https://github.com/marcelbohland/JavaScriptGallery/blob/main/LICENSE)
 
 # Implementation
 ### Step 1 - include JS/CSS File:
@@ -33,16 +34,16 @@ All settings parameters must be inserted before the addGallery() function
 
 Transitions:
 
-opacity
-zoomin
-slide
-slideAndZoom
-slideZoom
-ZoominFast
-bounce
-puffzoom
+
 ```javascript
 setGalleryTransition("opacity");
+setGalleryTransition("zoomin");
+setGalleryTransition("slide");
+setGalleryTransition("slideAndZoom");
+setGalleryTransition("slideZoom");
+setGalleryTransition("ZoominFast");
+setGalleryTransition("bounce");
+setGalleryTransition("puffzoom");
 ```
 Enable optional buttons like share
 ```javascript
