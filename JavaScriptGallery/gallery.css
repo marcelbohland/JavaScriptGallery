@@ -47,39 +47,13 @@
     border-radius: 160px;
 }
 .Gallery img.mosaic{
-    width: 300px;
-    max-height: 300px;
-    min-height: 300px;
-    max-width: 300px;
-    margin: 0;
+    margin: 2px;
     object-fit: cover;
     border-radius: 0;
     vertical-align: top;
     display: inline-block;
-    position: absolute;
-     top: 0;
-      left: 0; 
+ 
 }
-.Gallery img.small{
-    width: 300px;
-    max-height: 200px;
-    min-height: 200px;
-    max-width: 300px;
-
-}
-.Gallery img.medium{
-    width: 300px;
-    max-height: 300px;
-    min-height: 300px;
-    max-width: 300px;
-}
-.Gallery img.large{
-    width: 300px;
-    max-height: 350px;
-    min-height: 350px;
-    max-width: 300px;
-}
-
 
 .Gallery{
     margin-top: 150px;

@@ -41,39 +41,15 @@ AutoWidth = 0;
 topVar = 0;
 leftVar = 0;
 array = [30];
+className="";
 
 $(document).ready(function(){
 
   for(i=0;i<=30;i++){
     array[i] = 0;
-}
-  if(className=="mosaic"){
-  windowWidth =  $( "body" ).width();
-  counter = 0;
-      $('.mosaic').each(function( index ) {
-          if(array[counter] == 0){
-              elementHeight = $(this).height();
-              array[counter] = elementHeight;
-              $(this).css("transform","translate("+leftVar+"px, "+topVar+"px)");  
-          }else{
-              elementHeight = $(this).height();
-              height = 200 - array[counter];
-              newTop = topVar - height;
-              $(this).css("transform","translate("+leftVar+"px, "+newTop+"px)");
-              array[counter] = elementHeight - height;
-          }
-          leftVar = leftVar+300;
-          console.log(windowWidth);
-          if(leftVar+300 >= windowWidth-200){
-              leftVar = 0;
-              topVar = topVar+240;
-              counter = 0;
-          }else{
-              counter++;
-          }
-          });
+} 
+     
 
-        }          
 
     $(".ViewerImage").dblclick(function(){
         zoom();
@@ -110,6 +86,74 @@ function enableAutoWidth(){
   AutoWidth = 1;
 }
 
+function mosaic(){
+  row = 0;
+  column = 0;
+  x = 5;
+  y = 3;
+  xminus = 4;
+  yminus = 4;
+
+
+    valeCounter = 0;
+
+    GalleryWidth =  $( ".Gallery" ).width();
+    for(i=0;i<ImageIndex;i++){
+
+      if(GalleryWidth>1500){
+        x = 6;
+        y = 4;
+      }
+
+      
+      if(GalleryWidth>2000){
+        x = 7;
+        y = 5;
+      }
+
+      if(GalleryWidth<700){
+        x = 4;
+        y = 2;
+      }
+      if(GalleryWidth<500){
+        x = 2;
+        y = 1;
+      }
+
+
+    if(row%2==0){
+     
+        imageWidth = GalleryWidth/x-xminus;
+        $("#"+i).css("max-width",imageWidth+"px");
+        $("#"+i).css("min-width",imageWidth+"px");
+        $("#"+i).css("width",imageWidth+"px");
+        $("#"+i).css("max-height","175px");
+        $("#"+i).css("min-height","175px");
+        if(column==x-1){
+          row++;
+          column=-1;
+        }
+        column++;
+
+    }else{
+        imageWidth = GalleryWidth/y-yminus;
+        $("#"+i).css("max-width",imageWidth+"px");
+        $("#"+i).css("min-width",imageWidth+"px");
+        $("#"+i).css("width",imageWidth+"px");
+        $("#"+i).css("max-height","200px");
+        $("#"+i).css("min-height","200px");
+        if(column==y-1){
+          row++;
+          column=-1;
+        }
+        column++;
+      }
+  
+    
+     $('.Gallery').show();
+ }
+}
+
 $(window).on('resize', function(){
   if(AutoWidth == 1){
     galleryWidth = $(".Gallery").width();
@@ -135,6 +179,11 @@ $(window).on('resize', function(){
 
     $(".Gallery img").width(galleryWidth4);
   }
+
+  if(className=="mosaic"){
+    mosaic();
+  }
+
 });
 
 $(document).ready(function() { 
@@ -164,25 +213,9 @@ $(document).ready(function() {
   }
 
   if(className=="mosaic"){
-    valeCounter = 0;
-
-    for(i=0;i<ImageIndex;i++){
-      valeCounter++;
-    
-    if(valeCounter<=3){
-      $("#"+i).addClass("small");
-    }
-    if(valeCounter>3&&valeCounter<=6){
-      $("#"+i).addClass("medium");
-    }
-    if(valeCounter>6&&valeCounter<=9){
-      $("#"+i).addClass("large");
-      valeCounter=0;
-    }
-    }
-    
-      $('.Gallery').show();
+    mosaic();
   }
+
 });
 
  function addGallery(Data){
@@ -192,7 +225,6 @@ $(document).ready(function() {
     var obj = jQuery.parseJSON(Data);
   $.each(obj, function(i, item) {
 
-    className="";
     if(galleryStyle=="tiles"){
        className="tiles";
     }
@@ -614,7 +646,7 @@ if(zoomVal==1){
       widthValue = this.width;
       heightValue = this.height;
       calc = widthValue/heightValue;
-      $( ".ViewerImage" ).draggable( { disabled: false });
+      $( ".ViewerImage" ).draggable( { disabled: false, scroll: false });
       $( ".ViewerImage" ).draggable({ cursor: "pointer" });
       if(calc<1.25){
         $(".ViewerImage").animate({height: "130%"}, 'slow');
