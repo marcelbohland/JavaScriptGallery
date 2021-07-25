@@ -59,6 +59,7 @@ setGalleryStyle("tiles");
 setGalleryStyle("center");
 setGalleryStyle("Circles");
 setGalleryStyle("full");
+setGalleryStyle("mosaic");
 ```
 # Image viewer
 Add "galleryJS" to img tags!
