@@ -1,7 +1,7 @@
 # JavaScriptGallery
 
-[![current version](https://img.shields.io/badge/current%20version-0.1.2-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.2)
-[![last version](https://img.shields.io/badge/last%20version-0.1.1-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.1)
+[![current version](https://img.shields.io/badge/current%20version-0.1.3-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.3)
+[![last version](https://img.shields.io/badge/last%20version-0.1.2-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.2)
 [![license](https://img.shields.io/badge/license-Apache%20License%202.0-red.svg)](https://github.com/marcelbohland/JavaScriptGallery/blob/main/LICENSE)
 
 # Implementation
@@ -59,6 +59,7 @@ setGalleryStyle("tiles");
 setGalleryStyle("center");
 setGalleryStyle("Circles");
 setGalleryStyle("full");
+setGalleryStyle("mosaic");
 ```
 # Image viewer
 Add "galleryJS" to img tags!
