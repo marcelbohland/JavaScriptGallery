@@ -28,48 +28,9 @@ addGallery(json);
 json = '{ "Entry": { "Title": "Gallery 2", "Image": ["{your URL}/f.jpg", "{your URL}/g.jpg" ] } }';
 addGallery(json);
 ```
-### Step 4 - include settings (optional):
-All settings parameters must be inserted before the addGallery() function
 
-
-Transitions:
-
-
-```javascript
-setGalleryTransition("opacity");
-setGalleryTransition("zoomin");
-setGalleryTransition("slide");
-setGalleryTransition("slideAndZoom");
-setGalleryTransition("slideZoom");
-setGalleryTransition("ZoominFast");
-setGalleryTransition("bounce");
-setGalleryTransition("puffzoom");
-```
-Enable optional buttons like share
-```javascript
-enableExtraButtons();
-```
-Change backgroundcolor
-```javascript
-backgroundColor("#000000f7");
-```
-Change Gallery Style
-```javascript
-setGalleryStyle("tiles");
-setGalleryStyle("center");
-setGalleryStyle("Circles");
-setGalleryStyle("full");
-setGalleryStyle("mosaic");
-```
-# Image viewer
-Add "galleryJS" to img tags!
-For a full Viewer add "addToGallery" too
-
-# Add preview Images
-1. Add #preview to the end of the Image url.
-2. Add a smaller preview Image to the same path ({original_name}-preview.{original_file_extension})
-
-.jpeg; .png; .jpg and .webp are supported
+# Documentation
+[Documentation](https://github.com/marcelbohland/JavaScriptGallery/blob/main/documentation/documentation.md)
 
 # License
 Copyright 2021 Marcel Bohland - https://github.com/marcelbohland/JavaScriptGallery/
