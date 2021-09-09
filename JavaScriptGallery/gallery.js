@@ -42,6 +42,9 @@ topVar = 0;
 leftVar = 0;
 array = [30];
 className="";
+gallerySlideArray = [2000];
+galleryPos = 1;
+disabelInitMove = false;
 
 $(document).ready(function(){
 
@@ -712,3 +715,163 @@ function shareGertLink(){
 function setGalleryStyle(style){
     galleryStyle=style;
 }
+
+//Galery Slide
+let speed = 300;
+let animation = true;
+let dots = true;
+// Add Galery Slide Support
+function initGallerySlide(speedValue,animationValue,dotsValue){
+  speed = speedValue;
+  animation = animationValue;
+  dots = dotsValue;
+  // For each image in .GallerySlide div, add to gallerySlideArray and hide 
+  // the Images abouve the first one.
+  $( ".GallerySlide img" ).each(function( index ) {
+    gallerySlideArray.push($(this));
+    if(gallerySlideArray.length > 2){
+      $(this).hide();
+      if(animation==false){
+        $(this).css({right: "0%"});
+      }
+    }else{
+      $(this).css({right: "0%"});
+
+      // fill right/left arrows black if the class addFill was added
+      const classes = $(this).attr('class');
+      if(classes.includes('addFill')){
+        $(".nav_left").addClass("fillForGallerySlide");
+        $(".nav_right").addClass("fillForGallerySlide");
+      }
+
+    }
+
+    if(dots){
+        //Add dots to gallery slide
+        $(".GallerySlideDots").append('<p class="dot"></p>');
+
+       // select bottom Dots
+       setectDot(galleryPos);
+    }
+
+  });
+}
+
+
+function setectDot(id){
+  if(dots){
+    $(".GallerySlideDots .dot").css({"background-color": "rgb(173, 173, 173)"});
+    $(".GallerySlideDots .dot:nth-of-type("+id+")").css({"background-color": "rgb(49, 49, 49);"});
+  }
+}
+
+
+// Slide Left
+function gallerySlideLeft(){
+  if(galleryPos<=1){
+
+  }else{
+    
+    if(animation==true){
+      $(gallerySlideArray[galleryPos]).animate({right: "-100%"}, speed);
+    }else{
+      $(gallerySlideArray[galleryPos]).hide();
+    }
+  
+    galleryPos--;
+
+    // fill right/left arrows black if the class addFill was added
+    const classes = $(gallerySlideArray[galleryPos]).attr('class');
+    if(classes.includes('addFill')){
+      $(".nav_left").addClass("fillForGallerySlide");
+      $(".nav_right").addClass("fillForGallerySlide");
+    }else{
+      $(".nav_left").removeClass("fillForGallerySlide");
+      $(".nav_right").removeClass("fillForGallerySlide");
+    }
+
+    $(gallerySlideArray[galleryPos]).show();
+
+    // select bottom Dots
+    setectDot(galleryPos);
+
+    if(animation==true){
+      $(gallerySlideArray[galleryPos]).animate({right: "0%"}, speed);
+    }
+    
+  
+  }
+}
+
+// Slide Right
+function gallerySlideRight(){
+  if(galleryPos==gallerySlideArray.length-1){
+
+  }else{
+    if(animation==true){
+      $(gallerySlideArray[galleryPos]).animate({right: "100%"}, speed);
+    }else{
+      $(gallerySlideArray[galleryPos]).hide();
+    }
+    
+    galleryPos++;
+
+    // fill right/left arrows black if the class addFill was added
+    const classes = $(gallerySlideArray[galleryPos]).attr('class');
+    if(classes.includes('addFill')){
+      $(".nav_left").addClass("fillForGallerySlide");
+      $(".nav_right").addClass("fillForGallerySlide");
+    }else{
+      $(".nav_left").removeClass("fillForGallerySlide");
+      $(".nav_right").removeClass("fillForGallerySlide");
+    }
+
+    $(gallerySlideArray[galleryPos]).show();
+
+    // select bottom Dots
+    setectDot(galleryPos);
+
+    if(animation==true){
+      $(gallerySlideArray[galleryPos]).animate({right: "0%"}, speed);
+    }
+    
+  }
+}
+
+
+// Function to break a image into a div on a responsive website
+function initMove(){
+	
+  if(disabelInitMove==false){
+    $( "move" ).each(function( index ) {
+      const id = $( this ).attr('id');
+      const media = $( this ).attr('mediaquery');
+      var width = $(window).width();
+      if(width<media){		
+         const elementID = id.split('move_');
+         if (!$("unmove#un"+ id).length){
+            $("#element_" + elementID[1]).after("<unmove id=un"+ id +" mediaquery="+ media +"></unmove>");
+         }
+         $("#element_" + elementID[1]).appendTo("#" + id);
+      }
+    });
+    
+    $( "unmove" ).each(function( index ) {
+      const id = $( this ).attr('id');
+      const media = $( this ).attr('mediaquery');
+      var width = $(window).width();
+      if(width>media){		
+         const elementID = id.split('unmove_');
+         $("#element_" + elementID[1]).appendTo("#" + id);
+      }
+    });
+  
+    $( window ).resize(function() {
+      initMove();
+      disabelInitMove=true;
+      setTimeout(function(){ 
+        disabelInitMove=false;
+      }, 400);
+    });
+  }  
+  }

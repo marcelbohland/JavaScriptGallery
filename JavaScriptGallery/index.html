@@ -26,8 +26,40 @@
     </style>
     <body>
         <h1>Gallery.js</h1>
+        <br><br><br><br>
+
+        <h3>Break a image between other elements on responsive websites. [triggered on 768px]</h3><br>
+
+        <img style="margin-left: 3%;" id="element_2155" src="https://via.placeholder.com/150" ><br><br>
+        <div style="background-color: orange; width: calc(95% - 20px); height: 300px; border-radius: 5px; margin: 0 auto; padding: 10px" class="demoElement">
+           <h1>Headline</h1>
+           <move id="move_2155" mediaquery="768" ></move>
+           <p>Some Text</p>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <h3>Slider</h3><br>
+        <div style="max-width: 600px; height: 300px;">
+            <div class="GallerySlide">
+                <svg onClick="gallerySlideLeft()" class="nav_left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                <img class="codeImage galleryJS" width="600px" height="324px" src="https://dummyimage.com/800x400/aa550/fff000" alt="source code">
+                <img class="codeImage galleryJS addFill" width="600px" height="324px" src="https://dummyimage.com/800x400/ff0000/000" alt="source code">
+                <img class="codeImage galleryJS" width="600px" height="324px" src="https://dummyimage.com/800x400/00ff00/00ff00" alt="source code">
+                <img class="codeImage galleryJS" width="600px" height="324px" src="https://dummyimage.com/800x400/0000ff/0000ff" alt="source code">
+                <svg onClick="gallerySlideRight()" class="nav_right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48px" height="48px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+            </div>
+            <div class="GallerySlideDots">
+
+            </div>
+        </div>
+        <br><br><br><br><br><br>
+        <h3>Standalone image:</h3><br>
         <img class="codeImage galleryJS" width="600px" height="324px" src="https://dummyimage.com/800x400/000/fff000" alt="source code">
-<div class="Gallery "></div>
+        
+<div class="Gallery ">
+    <h3>Full gallery:</h3>
+</div>
 <div class="footer"><p>Marcel Bohland 2021</p></div>
 <script>  
 /*
@@ -46,6 +78,8 @@
    addGallery(json);
    json = '{ "Entry": { "Title": "Was ist los mit dir?",  "Image": ["https://dummyimage.com/800x400/ff0000/ff0000", "https://via.placeholder.com/1200" ] } }';
    addGallery(json);
+   initGallerySlide(300, true, true);
+   initMove();
 </script>
     </body>
 </html>
