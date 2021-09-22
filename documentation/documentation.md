@@ -56,6 +56,7 @@ For a full Viewer add "addToGallery" too
 
 2. Initialize the gallery slide
 ```javascript
+   //animation duration, enable/disable animation , enable/disable dots under the slider
    initGallerySlide(300, true, true);
 ````
 
