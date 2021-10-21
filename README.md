@@ -18,14 +18,14 @@ JQuery and JQuery UI is required!
 ### Step 3 - include Gallery Script:
 ```javascript
 json = '{ "Entry": { "Title": "Gallery Demo", '+
-'"Image": ["{your URL}/f.jpg",'+
-'"{your URL}/g.jpg",'+
-'"{your URL}/f.jpg",'+
-'"{your URL}/g.jpg",'+
-'"{your URL}/f.jpg",'+
-'"{your URL}/g.jpg" ] } }';
+'"Image": ["{your URL}/test.jpg",'+
+'"{your URL}/test.jpg",'+
+'"{your URL}/test.jpg",'+
+'"{your URL}/test.jpg",'+
+'"{your URL}/test.jpg",'+
+'"{your URL}/test.jpg" ] } }';
 addGallery(json);
-json = '{ "Entry": { "Title": "Gallery 2", "Image": ["{your URL}/f.jpg", "{your URL}/g.jpg" ] } }';
+json = '{ "Entry": { "Title": "Gallery 2", "Image": ["{your URL}/test.jpg", "{your URL}/test.jpg" ] } }';
 addGallery(json);
 ```
 
