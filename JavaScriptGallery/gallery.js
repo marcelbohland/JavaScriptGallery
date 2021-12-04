@@ -50,52 +50,52 @@ $(document).ready(function () {
   for (i = 0; i <= 30; i++) {
     array[i] = 0;
   }
-
- /* $(".addToGallery").each(function () {
-    $(this).attr("id", ImageIndex);
-    $(this).addClass("addedToGallery");
-    ImageIndex++;
-  });
-  */
+  
 
   $(".galleryJS").click(function () {
-    url = $(this).attr("src");
-    if(url==null&&$(this).find("source").length > 0){
-      var url = $(this).find("source").attr("src");
-      
-    addImageViewer();
-
-    $(".ViewerVideo > source").attr("src", url);
-    $(".ViewerVideo")[0].load();
-
-    $(".ViewerImage").hide();
-    $(".ViewerVideo").show();
-    $(".GalleryViewer").show();
-
-    if($(this).hasClass("addedToGallery")){
-      $(".Arrowright").show();
-      $(".ArrowLeft").show();
+    
+    if($(this).hasClass("addToGallery")){
+     openViewer($(this).attr("id"));
     }else{
-      $(".Arrowright").hide();
-      $(".ArrowLeft").hide();
-    }
-    monoImageView = 1;
-    monoImageViewURL = url;
-
-    }else{
+      url = $(this).attr("src");
+      if(url==null&&$(this).find("source").length > 0){
+        var url = $(this).find("source").attr("src");
+        
       addImageViewer();
-      $(".ViewerImage").attr("src", url);
+  
+      $(".ViewerVideo > source").attr("src", url);
+      $(".ViewerVideo")[0].load();
+  
+      $(".ViewerImage").hide();
+      $(".ViewerVideo").show();
       $(".GalleryViewer").show();
+  
       if($(this).hasClass("addedToGallery")){
         $(".Arrowright").show();
         $(".ArrowLeft").show();
       }else{
         $(".Arrowright").hide();
-      }  
-      $(".ViewerImage").show();
-      $(".ViewerVideo").hide();
+        $(".ArrowLeft").hide();
+      }
       monoImageView = 1;
       monoImageViewURL = url;
+  
+      }else{
+        addImageViewer();
+        $(".ViewerImage").attr("src", url);
+        $(".GalleryViewer").show();
+        if($(this).hasClass("addedToGallery")){
+          $(".Arrowright").show();
+          $(".ArrowLeft").show();
+        }else{
+          $(".Arrowright").hide();
+          $(".ArrowLeft").hide();
+        }  
+        $(".ViewerImage").show();
+        $(".ViewerVideo").hide();
+        monoImageView = 1;
+        monoImageViewURL = url;
+      }
     }
   });
 });
@@ -604,12 +604,12 @@ function right() {
       $(".ViewerVideo > source").attr("src", url);
       $(".ViewerVideo")[0].load();
 
+      //Run transition animation
+      transitionRight(transition, "ViewerVideo");
+
       $(".ViewerImage").hide();
       $(".ViewerVideo").show();
       $(".GalleryViewer").show();
-
-      //Run transition animation
-      transitionRight(transition, "ViewerVideo");
     } else {
       //Images
       var url = document.getElementById(viewerPosition).src;
@@ -621,9 +621,10 @@ function right() {
       // Check the aspect ratio and set params
       setParamsByRatioOfImage(url);
 
-      var url = $(".ViewerImage").attr("src");
-
+      //Run transition animation
       transitionRight(transition, "ViewerImage");
+      $(".ViewerImage").show();
+      $(".ViewerVideo").hide();
     }
   } else {
     viewerPosition = viewerPosition - 1;
@@ -1155,6 +1156,12 @@ function initGallery() {
   } else {
     $(".Gallery").hide();
   }
+  
+  $(".addToGallery").each(function () {
+    $(this).attr("id", ImageIndex);
+    $(this).addClass("addedToGallery");
+    ImageIndex++;
+  });
 
   $(".Gallery img,.Gallery video").each(function (index) {
     // add id and onClick to images/Videos
@@ -1164,4 +1171,29 @@ function initGallery() {
   });
 
   addPlayer();
+}
+
+
+
+
+
+function Debug(){
+
+  const output = {
+    added:added, ImageIndex:ImageIndex,
+    viewerPosition:viewerPosition,
+    transition:transition,
+    enableViewOriginalPictureVal:enableViewOriginalPictureVal,
+    zoomVal:zoomVal,
+    share:share,
+    monoImageView:monoImageView,
+    monoImageViewURL:monoImageViewURL,
+    eachID:eachID,
+    backgroundcolor:backgroundcolor,
+    galleryStyle:galleryStyle,
+    AutoWidth:AutoWidth,
+  };
+
+   console.log(output);
+
 }
