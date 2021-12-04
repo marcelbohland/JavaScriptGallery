@@ -15,6 +15,10 @@ setGalleryTransition("ZoominFast");
 setGalleryTransition("bounce");
 setGalleryTransition("puffzoom");
 ```
+Enable double click in gallery viewer
+```javascript
+enableDoubleClick();
+```
 Enable optional buttons like share
 ```javascript
 enableExtraButtons();
@@ -79,4 +83,12 @@ If you want to move an element between two other elements on a web page, this is
    initMove();
 ````
 4. Now the element is moved at a resolution of 768 pixels between the two elements
+
+# Debug
+
+Get a lot information for debuging
+```javascript
+   //run this in the webbrowser console
+   Debug()
+````
    
