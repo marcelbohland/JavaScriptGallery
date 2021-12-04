@@ -51,6 +51,64 @@
     margin-top: 30px;
     margin-bottom: 5px;
 }
+.Gallery video{
+    width: 300px;
+    max-height: 169px;
+    min-height: 169px;
+    margin: 6px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.Gallery video{
+    width: 300px;
+    max-height: 169px;
+    min-height: 169px;
+    margin: 6px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.Gallery video.tiles{
+    width: 300px;
+    max-height: 169px;
+    min-height: 169px;
+    margin: -2px;
+    object-fit: cover;
+    border-radius: 0;
+}
+.Gallery video.full{
+    width: 100%;
+    height: auto;
+    max-height: unset;
+    margin: -2px;
+    object-fit: cover;
+    border-radius: 0;
+}
+.Gallery video.center{
+    width: 30%;
+    max-width: 30%;
+    max-height: unset;
+    min-height: unset;
+    margin: 10px auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 0;
+}
+.Gallery video.Circles{
+    width: 169px;
+    max-height: 169px;
+    min-height: 169px;
+    margin: 4px;
+    object-fit: cover;
+    border-radius: 160px;
+}
+.Gallery video.mosaic{
+    margin: 2px;
+    object-fit: cover;
+    border-radius: 0;
+    vertical-align: top;
+    display: inline-block;
+ 
+}
 .Gallery img{
     width: 300px;
     max-height: 169px;
@@ -120,6 +178,25 @@
     max-width: 80%;
     max-height: 80%;
     object-fit: contain;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    animation-name: zommin;
+    animation-duration: 0.6s;
+    border-radius: 10px;
+}
+.GalleryViewer Video{
+    width: 80%;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: cover;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -230,6 +307,9 @@
 }
 @media only screen and (max-width: 500px) {
     .Gallery img{
+        width: calc(100% - 20px);
+    }
+    .Gallery video{
         width: calc(100% - 20px);
     }
 }
