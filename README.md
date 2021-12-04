@@ -28,6 +28,8 @@ addGallery(json);
 json = '{ "Entry": { "Title": "Gallery 2", "Image": ["{your URL}/test.jpg", "{your URL}/test.jpg" ] } }';
 addGallery(json);
 ```
+# Implementation over HTML
+[Example](https://github.com/marcelbohland/JavaScriptGallery/blob/main/JavaScriptGallery/html.html)
 
 # Documentation
 [Documentation](https://github.com/marcelbohland/JavaScriptGallery/blob/main/documentation/documentation.md)
