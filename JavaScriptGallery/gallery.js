@@ -917,9 +917,7 @@ function initGallery() {
   addPlayer();
 }
 
-
-
-
+//Function for debug information
 
 function Debug(){
 
