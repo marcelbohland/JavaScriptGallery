@@ -917,6 +917,17 @@ function initGallery() {
   addPlayer();
 }
 
+//Add Listner for keydown event ESCAPE
+
+function enableKeydownESC(){
+  $(document).keydown(function(e) {
+    // ESCAPE key pressed
+    if (e.keyCode == 27) {
+        closeViewer();
+    }
+});
+}
+
 //Function for debug information
 
 function Debug(){

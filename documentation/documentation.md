@@ -23,6 +23,10 @@ Enable optional buttons like share
 ```javascript
 enableExtraButtons();
 ```
+Enable keydown listner for ESCAPE
+```javascript
+enableKeydownESC();
+```
 Change backgroundcolor
 ```javascript
 backgroundColor("#000000f7");
