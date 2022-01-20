@@ -1,5 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="gallery.js"></script>
@@ -18,11 +23,11 @@
       background-color: rgb(224 224 224);
       color: black;
     }
-    .main{
-        margin: 20px;
+    .main {
+      margin: 20px;
     }
-    .Gallery{
-        margin: 20px;
+    .Gallery {
+      margin: 20px;
     }
     .footer {
       width: 100%;
@@ -43,7 +48,7 @@
     <br /><br /><br /><br />
 
     <div class="Main">
-        <h2>Break a image</h2>
+      <h2>Break a image</h2>
       <p>
         Break a image between other elements on responsive websites. [triggered
         on 768px]
@@ -60,10 +65,7 @@
         "
         class="demoElement"
       >
-        <img
-          id="element_2155"
-          src="https://via.placeholder.com/150"
-        />
+        <img id="element_2155" src="https://via.placeholder.com/150" />
         <h1>Headline</h1>
         <move id="move_2155" mediaquery="768"></move>
         <p>Some Text</p>
@@ -139,21 +141,12 @@
         class="codeImage galleryJS"
         width="600px"
         height="324px"
-        src="https://dummyimage.com/800x400/000/fff000"
+        src="https://dummyimage.com/800x400/000fff/54aa00"
         alt="source code"
       />
     </div>
 
-    <div class="Gallery">
-      
-    </div>
-    <!--
-    <div class="Gallery">
-       <h2>Full gallery:</h2>
-       <p>Meine Lieblings Bilder</p>
-       <img loading="lazy" class="galleryJS" alt="Image0" width="300px" height="169px" src="https://dummyimage.com/800x400/ff0000/ff0000">
-    </div>
-    -->
+    <div class="Gallery"></div>
     <div class="footer"><p>Marcel Bohland 2021</p></div>
     <script>
       /*
@@ -165,20 +158,19 @@
       json =
         '{ "Entry": { "Title": "Meine Lieblings Bilder", ' +
         '"Image": ["https://dummyimage.com/800x400/ff0000/ff0000",' +
-        '"https://dummyimage.com/800x400/000/000",' +
+        '"https://dummyimage.com/800x400/000fff/ffffff",' +
         '"https://dummyimage.com/800x400/00ff00/00ff00",' +
-        '"https://dummyimage.com/800x400/000/000",' +
+        '"https://dummyimage.com/800x400/000fff/000",' +
         '"https://dummyimage.com/800x400/0000ff/0000ff",' +
-        '"https://dummyimage.com/800x400/000/000" ] } }';
-     addGallery(json);
+        '"https://dummyimage.com/800x400/000fff/fff000" ] } }';
+      addGallery(json);
       json =
         '{ "Entry": { "Title": "Was ist los mit dir?",  "Image": ["https://dummyimage.com/800x400/ff0000/ff0000", "https://via.placeholder.com/1200" ] } }';
-     addGallery(json);
+      addGallery(json);
       initGallerySlide(300, true, true);
       enableDoubleClick();
       initMove();
-      enableKeydownESC()
-     // initGallery();
+      enableKeydownESC();
     </script>
   </body>
 </html>
