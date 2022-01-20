@@ -1,4 +1,4 @@
-![Image of VapeCloud](ressources/Logo.png)
+![JavaScriptGallery Logo](ressources/Logo.png)
 
   
 [![current version](https://img.shields.io/badge/current%20version-0.1.7-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.7)
