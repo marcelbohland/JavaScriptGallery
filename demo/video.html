@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Gallery.js - Video</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="gallery.js"></script>
-    <link rel="stylesheet" type="text/css" href="gallery.css" media="screen" />
+    <script src="../src/gallery.js"></script>
+    <link rel="stylesheet" type="text/css" href="../src/gallery.css" media="screen" />
   </head>
   <style>
     * {
@@ -23,11 +23,27 @@
       background-color: rgb(224 224 224);
       color: black;
     }
-    .main {
-      margin: 20px;
+    .Main {
+      padding: 20px;
+    }
+    .nav{
+      padding: 20px;
+    }
+    .nav .bubble{
+      padding: 10px;
+      background-color: aqua;
+      border-radius: 100vw;
+      max-width: 100px;
+      text-align: center;
+      margin-top: 5px;
+      display: inline-block;
+    }
+    .nav .bubble a{
+      text-decoration: none;
+      color: #ffffff;
     }
     .Gallery {
-      margin: 20px;
+      margin-top: 0;
     }
     .footer {
       width: 100%;
@@ -45,8 +61,20 @@
     <div class="header">
       <h1>Gallery.js</h1>
     </div>
-    <br /><br /><br /><br />
-    <video
+    <div class="nav">
+      <h1>Gallery.js Demo</h1>
+      <p>More Pages:</p>
+      <div class="bubble">
+        <a href="index.html">Home</a>
+      </div>
+     </div>
+
+    <div class="Main">
+      <br />
+      <hr>  
+      <br />
+      <h2>Standalone video</h2>
+      <video
       class="galleryJS addToGallery"
       width="320"
       height="240"
@@ -56,13 +84,18 @@
     >
       <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
     </video>
-    <br /><br /><br /><br />
+    <br />
+    <hr>  
+    <br />
+    <h2>Standalone image</h2>
     <img
       class="galleryJS addToGallery"
       src="https://dummyimage.com/800x400/c8d356/00ff00"
     />
-    <br /><br /><br /><br />
-    <div class="Main">
+    <br />
+    <hr>  
+    <br />
+    <h2>Gallery with video</h2>
       <div class="Gallery">
         <img src="https://dummyimage.com/800x400/00ff00/00ff00" />
         <img src="https://dummyimage.com/800x400/ffff00/00ff00" />
@@ -86,7 +119,7 @@
         </video>
       </div>
     </div>
-    <div class="footer"><p>Marcel Bohland 2021</p></div>
+    <div class="footer"><p>Marcel Bohland 2022</p></div>
     <script>
       /*
        * For every Day/Project a new "addGallery"
