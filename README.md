@@ -32,7 +32,7 @@ json = '{ "Entry": { "Title": "Gallery 2", "Image": ["{your URL}/test.jpg", "{yo
 addGallery(json);
 ```
 # Implementation over HTML
-[Example](https://github.com/marcelbohland/JavaScriptGallery/blob/main/JavaScriptGallery/html.html)
+[Example](https://github.com/marcelbohland/JavaScriptGallery/blob/main/demo/video.html)
 
 # Documentation
 [Documentation](https://github.com/marcelbohland/JavaScriptGallery/blob/main/documentation/documentation.md)
