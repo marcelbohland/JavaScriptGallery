@@ -1,8 +1,11 @@
-# JavaScriptGallery
+![Image of VapeCloud](ressources/Logo.png)
 
-[![current version](https://img.shields.io/badge/current%20version-0.1.6-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.6)
-[![last version](https://img.shields.io/badge/last%20version-0.1.5-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.5)
+  
+[![current version](https://img.shields.io/badge/current%20version-0.1.6-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.7)
+[![last working version](https://img.shields.io/badge/last%20working%20version-0.1.4-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.4)
+[![last version](https://img.shields.io/badge/last%20version-0.1.5-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.6)
 [![license](https://img.shields.io/badge/license-Apache%20License%202.0-red.svg)](https://github.com/marcelbohland/JavaScriptGallery/blob/main/LICENSE)
+
 
 # Implementation
 ### Step 1 - include JS/CSS File:
