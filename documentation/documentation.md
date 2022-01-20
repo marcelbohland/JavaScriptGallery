@@ -5,6 +5,6 @@ Image slider: [Galery-Slider](Galery-Slider.md)
 
 Move image on resize:[Move-Elements](Move-Elements.md)
 
-Optional and advanced settings: [Optional-settings](Optional-settings.md)
+Optional and advanced settings (Transitions/Background-Color etc.): [Optional-settings](Optional-settings.md)
 
 Help for Debuging: [debug](debug.md)
