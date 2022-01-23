@@ -36,9 +36,6 @@ addGallery(json);
 # Documentation (2.0)
 [Documentation](https://github.com/marcelbohland/JavaScriptGallery/blob/main/documentation/documentation.md)
 
-# Documentation (0.1.0 - 0.1.7)
-[Documentation](https://github.com/marcelbohland/JavaScriptGallery/blob/main/documentation/0.1.X/documentation.md)
-
 # License
 Copyright 2021 Marcel Bohland - https://github.com/marcelbohland/JavaScriptGallery/
 
