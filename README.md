@@ -33,7 +33,7 @@ addGallery(json);
 # Implementation over HTML
 [Documentation>>HTML](https://github.com/marcelbohland/JavaScriptGallery/blob/main/documentation/html.md)
 
-# Documentation (2.0)
+# Documentation
 [Documentation](https://github.com/marcelbohland/JavaScriptGallery/blob/main/documentation/documentation.md)
 
 # License
