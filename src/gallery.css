@@ -164,6 +164,7 @@
     margin-top: 150px;
     margin-bottom: 150px;
     position: relative;
+    display: table;
 }
 .GalleryViewer{
     background-color: #000000e8;

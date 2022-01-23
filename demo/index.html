@@ -20,18 +20,23 @@
       width: 100%;
       height: 40px;
       text-align: center;
-      background-color: rgb(224 224 224);
+      background-color: #cde5a9;;
       color: black;
+      position: fixed;
+      z-index: 99999;
+      top: 0;
     }
     .Main {
       padding: 20px;
+      margin-top: 150px;
     }
     .nav{
-      padding: 20px;
+      background-color: #cde5a9;
+      padding: 5px;
     }
     .nav .bubble{
       padding: 10px;
-      background-color: aqua;
+      background-color: #edffd2;
       border-radius: 100vw;
       max-width: 100px;
       text-align: center;
@@ -40,7 +45,7 @@
     }
     .nav .bubble a{
       text-decoration: none;
-      color: #ffffff;
+      color: #ababab;
     }
     .Gallery {
       margin: 20px;
@@ -49,7 +54,7 @@
       width: 100%;
       height: 30px;
       text-align: center;
-      background-color: rgb(224 224 224);
+      background-color: #cde5a9;
       color: black;
     }
     .footer p {
@@ -60,20 +65,19 @@
   <body>
     <div class="header">
       <h1>Gallery.js</h1>
+      <div class="nav">
+        <div class="bubble">
+          <a href="index.html">Home</a>
+        </div>
+        <div class="bubble">
+          <a href="video.html">Video</a>
+        </div>
+       </div>
     </div>
-    <br /><br />
-     <div class="nav">
-      <h1>Gallery.js Demo</h1>
-      <p>More Pages:</p>
-      <div class="bubble">
-        <a href="video.html">Video</a>
-      </div>
-     </div>
-    <br /><br />
-
     <div class="Main">
-      <hr>  
-      <br />
+     <h1>JavaScriptGallery Demo</h1>
+      <br /><br /><br /><br /><br />
+    
       <h2>Break a image</h2>
       <p>
         Break a image between other elements on responsive websites. [triggered
@@ -83,7 +87,7 @@
 
       <div
         style="
-          background-color: rgb(224 224 224);
+          background-color: rgb(224 224 224 / 62%);
           width: calc(95% - 20px);
           height: 300px;
           border-radius: 5px;
@@ -91,14 +95,19 @@
         "
         class="demoElement"
       >
-        <img id="element_2155" src="https://via.placeholder.com/150" />
+        <img id="element_2155" src="https://dummyimage.com/300x150/000fff/ffffff" />
         <h1>Headline</h1>
         <move id="move_2155" mediaquery="768"></move>
         <p>Some Text</p>
       </div>
-
       <br />
-      <hr>  
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
 
       <h2>Slider</h2>
@@ -106,7 +115,7 @@
       <div style="max-width: 600px; height: 300px">
         <div class="GallerySlide">
           <svg
-            onClick="gallerySlideLeft()"
+            onClick="JavaScriptGallery.gallerySlideLeft()"
             class="nav_left"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -148,7 +157,7 @@
             alt="source code"
           />
           <svg
-            onClick="gallerySlideRight()"
+            onClick="JavaScriptGallery.gallerySlideRight()"
             class="nav_right"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -164,28 +173,41 @@
       </div>
       <br />
       <br />
-      <hr>  
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <h2>Standalone image:</h2>
       <br />
       <img
-        class="codeImage galleryJS"
+        class="codeImage galleryJS addToGallery"
         width="600px"
         height="324px"
         src="https://dummyimage.com/800x400/000fff/54aa00"
         alt="source code"
       />
     </div>
-
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <div class="Gallery"></div>
     <div class="footer"><p>Marcel Bohland 2022</p></div>
     <script>
       /*
-       * For every Day/Project a new "addGallery"
-       */
+      * For every Day/Project a new "addGallery"
+      */
 
-      setGalleryTransition("opacity");
-      enableExtraButtons();
+      JavaScriptGallery.setGalleryTransition("opacity");
+      JavaScriptGallery.enableExtraButtons();
       json =
         '{ "Entry": { "Title": "Meine Lieblings Bilder", ' +
         '"Image": ["https://dummyimage.com/800x400/ff0000/ff0000",' +
@@ -194,14 +216,14 @@
         '"https://dummyimage.com/800x400/000fff/000",' +
         '"https://dummyimage.com/800x400/0000ff/0000ff",' +
         '"https://dummyimage.com/800x400/000fff/fff000" ] } }';
-      addGallery(json);
+      JavaScriptGallery.addGallery(json);
       json =
         '{ "Entry": { "Title": "Was ist los mit dir?",  "Image": ["https://dummyimage.com/800x400/ff0000/ff0000", "https://via.placeholder.com/1200" ] } }';
-      addGallery(json);
-      initGallerySlide(300, true, true);
-      enableDoubleClick();
-      initMove();
-      enableKeydownESC();
+      JavaScriptGallery.addGallery(json);
+      JavaScriptGallery.initGallerySlide(300, true, true);
+      JavaScriptGallery.enableDoubleClick();
+      JavaScriptGallery.initMove();
+      JavaScriptGallery.enableKeydownESC();
     </script>
   </body>
 </html>
