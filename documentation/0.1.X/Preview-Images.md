@@ -12,5 +12,5 @@ json = '{ "Entry": { "Title": "Gallery Demo", '+
 '"{your URL}/test.jpg#preview",'+
 '"{your URL}/test.jpg#preview",'+
 '"{your URL}/test.jpg#preview" ] } }';
-JavaScriptGallery.addGallery(json);
+addGallery(json);
 ```

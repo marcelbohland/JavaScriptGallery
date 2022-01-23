@@ -263,11 +263,11 @@ class JavaScriptGallery {
 
   addImageViewer() {
     // Adds player HTML code to GalleryViewer Div container
-
+    var self = this;
     if (this.added == 0) {
       $("body").append(
         '<div style="background-color:' +
-          this.backgroundcolor +
+          self.backgroundcolor +
           ';" class="GalleryViewer"></div>'
       );
       $(".GalleryViewer").append(
@@ -312,9 +312,13 @@ class JavaScriptGallery {
   }
   addPlayer() {
     // Adds player HTML code to GalleryViewer Div container
-
+    var self = this;
     if (this.added == 0) {
-      $("body").append('<div class="GalleryViewer"></div>');
+      $("body").append(
+        '<div style="background-color:' +
+          self.backgroundcolor +
+          ';" class="GalleryViewer"></div>'
+      );
       $(".GalleryViewer").append(
         '<img class="ViewerImage" id="ViewerImage" src="" />'
       );

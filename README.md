@@ -1,9 +1,8 @@
 ![JavaScriptGallery Logo](ressources/Logo.png)
 
   
-[![current version](https://img.shields.io/badge/current%20version-0.1.7-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.7)
-[![last working version](https://img.shields.io/badge/last%20working%20version-0.1.4-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.4)
-[![last version](https://img.shields.io/badge/last%20version-0.1.6-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.6)
+[![current version](https://img.shields.io/badge/current%20version-0.2.0-green.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.2.0)
+[![last version](https://img.shields.io/badge/last%20version-0.1.7-blue.svg)](https://github.com/marcelbohland/JavaScriptGallery/releases/tag/0.1.7)
 [![license](https://img.shields.io/badge/license-Apache%20License%202.0-red.svg)](https://github.com/marcelbohland/JavaScriptGallery/blob/main/LICENSE)
 
 
@@ -34,8 +33,11 @@ addGallery(json);
 # Implementation over HTML
 [Documentation>>HTML](https://github.com/marcelbohland/JavaScriptGallery/blob/main/documentation/html.md)
 
-# Documentation
+# Documentation (2.0)
 [Documentation](https://github.com/marcelbohland/JavaScriptGallery/blob/main/documentation/documentation.md)
+
+# Documentation (0.1.0 - 0.1.7)
+[Documentation](https://github.com/marcelbohland/JavaScriptGallery/blob/main/documentation/0.1.X/documentation.md)
 
 # License
 Copyright 2021 Marcel Bohland - https://github.com/marcelbohland/JavaScriptGallery/

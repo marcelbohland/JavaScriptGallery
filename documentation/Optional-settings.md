@@ -6,36 +6,36 @@ Transitions:
 
 
 ```javascript
-setGalleryTransition("opacity");
-setGalleryTransition("zoomin");
-setGalleryTransition("slide");
-setGalleryTransition("slideAndZoom");
-setGalleryTransition("slideZoom");
-setGalleryTransition("ZoominFast");
-setGalleryTransition("bounce");
-setGalleryTransition("puffzoom");
+JavaScriptGallery.setGalleryTransition("opacity");
+JavaScriptGallery.setGalleryTransition("zoomin");
+JavaScriptGallery.setGalleryTransition("slide");
+JavaScriptGallery.setGalleryTransition("slideAndZoom");
+JavaScriptGallery.setGalleryTransition("slideZoom");
+JavaScriptGallery.setGalleryTransition("ZoominFast");
+JavaScriptGallery.setGalleryTransition("bounce");
+JavaScriptGallery.setGalleryTransition("puffzoom");
 ```
 Enable double click in gallery viewer
 ```javascript
-enableDoubleClick();
+JavaScriptGallery.enableDoubleClick();
 ```
 Enable optional buttons like share
 ```javascript
-enableExtraButtons();
+JavaScriptGallery.enableExtraButtons();
 ```
 Enable keydown listner for ESCAPE
 ```javascript
-enableKeydownESC();
+JavaScriptGallery.enableKeydownESC();
 ```
 Change backgroundcolor
 ```javascript
-backgroundColor("#000000f7");
+JavaScriptGallery.backgroundColor("#000000f7");
 ```
 Change Gallery Style
 ```javascript
-setGalleryStyle("tiles");
-setGalleryStyle("center");
-setGalleryStyle("Circles");
-setGalleryStyle("full");
-setGalleryStyle("mosaic");
+JavaScriptGallery.setGalleryStyle("tiles");
+JavaScriptGallery.setGalleryStyle("center");
+JavaScriptGallery.setGalleryStyle("Circles");
+JavaScriptGallery.setGalleryStyle("full");
+JavaScriptGallery.setGalleryStyle("mosaic");
 ```

@@ -15,5 +15,5 @@
 2. Initialize the gallery slide
 ```javascript
    //animation duration, enable/disable animation , enable/disable dots under the slider
-   JavaScriptGallery.initGallerySlide(300, true, true);
+   initGallerySlide(300, true, true);
 ````

@@ -14,6 +14,6 @@ If you want to move an element between two other elements on a web page, this is
 ```
 3. Initialize the move
 ```javascript
-   JavaScriptGallery.initMove();
+   initMove();
 ````
 4. Now the element is moved at a resolution of 768 pixels between the two elements

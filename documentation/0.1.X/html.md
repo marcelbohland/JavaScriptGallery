@@ -25,9 +25,9 @@
         </video>
       </div>
     <script>
-      JavaScriptGallery.setGalleryTransition("slideAndZoom");
-      JavaScriptGallery.enableExtraButtons();
-      JavaScriptGallery.enableDoubleClick();
-      JavaScriptGallery.initGallery();
+      setGalleryTransition("slideAndZoom");
+      enableExtraButtons();
+      enableDoubleClick();
+      initGallery();
     </script>
 ```
