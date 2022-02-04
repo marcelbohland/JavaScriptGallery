@@ -9,12 +9,12 @@
 # Implementation
 ### Step 1 - include JS/CSS File:
 JQuery and JQuery UI is required!
-```
+```html
 <script src="{your URL}/gallery.js"></script>
 <link rel="stylesheet" type="text/css" href="{your URL}/gallery.css" media="screen" />
 ```
 ### Step 2 - include HTML Tag:
-```
+```html
 <div class="Gallery"></div>
 ```
 ### Step 3 - include Gallery Script:
