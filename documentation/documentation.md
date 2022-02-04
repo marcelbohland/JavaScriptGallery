@@ -15,5 +15,5 @@
 
 |Version|Link|
 |---|---|
-| 0.1.X | [Optional-settings](./0.1.X/documentation.md) |
+| 0.1.X | [view](./0.1.X/documentation.md) |
 
